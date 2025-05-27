@@ -11,8 +11,11 @@
     "pods": "cd ios && bundle exec pod install"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-hook-form": "^7.56.4",
+    "react-native": "0.79.2",
+    "zod": "^3.25.30"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

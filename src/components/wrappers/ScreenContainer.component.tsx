@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 16,
     backgroundColor: 'white',
+    paddingTop: 10,
   },
 });
 
