@@ -7,10 +7,12 @@ export type AppTextInputPropsType = {
   value?: string;
   containerStyle?: TextStyle;
   textType?: TextTypes;
+  name?: string;
 } & TextInputProps;
 
 const AppTextInput = ({
   value,
+  name,
   containerStyle,
   textType = TextTypes.Header,
   ...delegated
@@ -27,6 +29,7 @@ const AppTextInput = ({
       placeholderTextColor={colors.gray}
       {...delegated}
       style={style}
+      testID={`text-input-${name}`}
     />
   );
 };

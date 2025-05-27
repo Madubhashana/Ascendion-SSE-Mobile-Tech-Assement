@@ -9,6 +9,7 @@ type AppButtonPropsType = {
   onPress?: () => void;
   containerStyle?: ViewStyle;
   textType?: TextTypes;
+  testID?: string;
 };
 
 const AppButton = ({
@@ -17,6 +18,7 @@ const AppButton = ({
   onPress,
   containerStyle,
   textType = TextTypes.Section,
+  testID,
 }: AppButtonPropsType) => {
   const style = StyleSheet.flatten([
     styles.container,
@@ -29,7 +31,8 @@ const AppButton = ({
       disabled={disabled}
       activeOpacity={0.8}
       onPress={onPress}
-      style={style}>
+      style={style}
+      testID={testID}>
       <AppText textStyle={styles.label} color={colors.white} type={textType}>
         {children}
       </AppText>

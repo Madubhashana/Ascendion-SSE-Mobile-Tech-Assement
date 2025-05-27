@@ -6,19 +6,21 @@ type InputsContainerPropsType = {
   label?: string;
   error?: string;
   children: ReactElement | ReactElement[];
+  name?: string;
 };
 
 const InputsContainer = ({
   label,
   children,
   error,
+  name,
 }: InputsContainerPropsType) => {
   const isError = !!error;
 
   const labelText = label && <AppText type={TextTypes.Label}>{label}</AppText>;
 
   const inputErrors = isError ? (
-    <AppText type={TextTypes.Label} color="red">
+    <AppText type={TextTypes.Label} color="red" testID={`input-error-${name}`}>
       {error}
     </AppText>
   ) : null;

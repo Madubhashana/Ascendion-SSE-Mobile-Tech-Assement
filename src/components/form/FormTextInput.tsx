@@ -49,9 +49,10 @@ const FormTextInput = <T extends FieldValues>({
         };
 
         return (
-          <InputsContainer error={isError} label={label}>
+          <InputsContainer error={isError} label={label} name={name}>
             <AppTextInput
               value={value}
+              name={name}
               allowFontScaling={false}
               editable={!disabled}
               onSubmitEditing={handleOnSubmitEditing}

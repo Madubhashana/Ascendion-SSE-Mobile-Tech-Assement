@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ScreenContainer from '../../components/wrappers/ScreenContainer.component';
 import AppText, {TextTypes} from '../../components/elements/AppText.component';
 import {useForm} from 'react-hook-form';
@@ -9,20 +9,32 @@ import {
   CalculatorFormSchemaType,
 } from './calculator-form.schema';
 import AppButton from '../../components/elements/AppButton.component';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {colors} from '../../shared/config/colors';
 
 const CalculatorScreen = () => {
+  const [total, setTotal] = useState<number>(0);
+
   const {control, handleSubmit} = useForm<CalculatorFormSchemaType>({
     resolver: zodResolver(CalculatorFormSchema),
   });
 
-  const onSubmit = (data: CalculatorFormSchemaType) => {};
+  const onSubmit = (data: CalculatorFormSchemaType) => {
+    setTotal(data.inputOne + data.inputTwo);
+  };
 
   return (
     <ScreenContainer>
       <AppText type={TextTypes.Title} textStyle={styles.title}>
         Calculator
       </AppText>
+
+      <View style={styles.totalValueContainer}>
+        <AppText type={TextTypes.Label}>Total:</AppText>
+        <AppText type={TextTypes.Title} testID="total-value">
+          {total}
+        </AppText>
+      </View>
 
       <FormTextInput
         control={control}
@@ -36,9 +48,11 @@ const CalculatorScreen = () => {
         label="Second Number"
         keyboardType="number-pad"
       />
+
       <AppButton
         onPress={handleSubmit(onSubmit)}
-        containerStyle={styles.ctaButton}>
+        containerStyle={styles.ctaButton}
+        testID="add-numbers-button">
         Add Numbers
       </AppButton>
     </ScreenContainer>
@@ -47,10 +61,20 @@ const CalculatorScreen = () => {
 
 const styles = StyleSheet.create({
   title: {
-    marginBottom: 20,
+    marginBottom: 40,
+  },
+  totalValueContainer: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: colors.gray,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    marginBottom: 30,
+    justifyContent: 'space-between',
   },
   ctaButton: {
-    marginTop: 10,
+    marginTop: 30,
   },
 });
 
