@@ -32,6 +32,7 @@ const AppButton = ({
       activeOpacity={0.8}
       onPress={onPress}
       style={style}
+      accessibilityRole="button"
       testID={testID}>
       <AppText textStyle={styles.label} color={colors.white} type={textType}>
         {children}
