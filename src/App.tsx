@@ -10,7 +10,7 @@ type QuestionType = 'question1' | 'question2' | 'question3';
  * Change the question (question1 | question2 | question3) to
  * update the answer!
  */
-const question: QuestionType = 'question3';
+const question: QuestionType = 'question1';
 
 const App = () => {
   if (question === 'question1') {
