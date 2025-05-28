@@ -9,7 +9,7 @@ import {
   CalculatorFormSchemaType,
 } from './calculator-form.schema';
 import AppButton from '../../components/elements/AppButton.component';
-import {StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 import {colors} from '../../shared/config/colors';
 
 const CalculatorScreen = () => {
@@ -24,7 +24,7 @@ const CalculatorScreen = () => {
   };
 
   return (
-    <ScreenContainer>
+    <ScreenContainer containerStyle={styles.screenContainer}>
       <AppText type={TextTypes.Title} textStyle={styles.title}>
         Calculator
       </AppText>
@@ -60,6 +60,15 @@ const CalculatorScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  screenContainer: {
+    ...Platform.select({
+      web: {
+        maxWidth: 500,
+        margin: 'auto',
+        width: '100%',
+      },
+    }),
+  },
   title: {
     marginBottom: 40,
   },

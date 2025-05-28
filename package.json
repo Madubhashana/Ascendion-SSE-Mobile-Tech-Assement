@@ -5,16 +5,21 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "web": "expo start --web",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
     "pods": "cd ios && bundle exec pod install"
   },
   "dependencies": {
+    "@expo/webpack-config": "^19.0.1",
     "@hookform/resolvers": "^5.0.1",
+    "expo": "^53.0.9",
     "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hook-form": "^7.56.4",
     "react-native": "0.79.2",
+    "react-native-web": "^0.20.0",
     "zod": "^3.25.30"
   },
   "devDependencies": {
