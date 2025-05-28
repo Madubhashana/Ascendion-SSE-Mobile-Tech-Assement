@@ -19,10 +19,14 @@ And uses the `react-native: ^0.79.2`.
 
 4. Setup iOS
 
-   3.1 Install CocoaPods using Bundler (Recommended)
+   4.1 Install CocoaPods using Bundler (Recommended)
 
    - run `bundle install` to install the Bundler dependencies. (follow https://bundler.io/ to gets started with Bundler)
    - run `cd ios && bundle exec pod install` or `yarn pods` to install the Cocoapods dependencies
+
+5. Setup Android
+
+   - Since the project uses the latest RN, you may have to install the NDSK (Side by side) 27.1.12297006
 
 ### Run the project locally
 
@@ -40,3 +44,5 @@ And uses the `react-native: ^0.79.2`.
 ### Validate the questions
 
 Please update the value of `question` () in `src/App.tsx` file to populate the corresponding answer. The acceptable values are `'question1' | 'question2' | 'question3'`
+
+Run `yarn test` to execute the unit tests. It has configured a Github Action CI/CD for unit tests as well.
