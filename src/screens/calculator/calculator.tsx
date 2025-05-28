@@ -11,6 +11,7 @@ import {
 import AppButton from '../../components/elements/AppButton.component';
 import {Platform, StyleSheet, View} from 'react-native';
 import {colors} from '../../shared/config/colors';
+import {addTwoNumbers} from '../../shared/lib/util';
 
 const CalculatorScreen = () => {
   const [total, setTotal] = useState<number>(0);
@@ -20,7 +21,7 @@ const CalculatorScreen = () => {
   });
 
   const onSubmit = (data: CalculatorFormSchemaType) => {
-    setTotal(data.inputOne + data.inputTwo);
+    setTotal(addTwoNumbers(data.inputOne, data.inputTwo));
   };
 
   return (
