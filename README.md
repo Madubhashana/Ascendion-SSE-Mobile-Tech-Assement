@@ -36,3 +36,7 @@ And uses the `react-native: ^0.79.2`.
    - If it needs to start the metro server seperately, run `yarn start`
 
 **IMPORTANT**: `yarn start` does not runs the web application. Stop the metro server and run `yarn web` to start the web.
+
+### Validate the questions
+
+Please update the value of `question` () in `src/App.tsx` file to populate the corresponding answer. The acceptable values are `'question1' | 'question2' | 'question3'`

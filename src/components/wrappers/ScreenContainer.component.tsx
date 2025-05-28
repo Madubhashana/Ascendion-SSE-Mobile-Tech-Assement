@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {ReactNode} from 'react';
 import {
   KeyboardAvoidingView,
   KeyboardAvoidingViewProps,
@@ -16,7 +16,7 @@ const KEYBOARD_AVOIDING_BEHAVIOR: KeyboardAvoidingViewProps['behavior'] = IS_IOS
 
 type ScreenContainerPropsType = {
   containerStyle?: ViewStyle;
-  children: ReactElement | ReactElement[];
+  children: ReactNode | ReactNode[];
 };
 
 const ScreenContainer = ({

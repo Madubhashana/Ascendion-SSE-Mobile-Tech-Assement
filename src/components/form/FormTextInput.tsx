@@ -27,6 +27,7 @@ const FormTextInput = <T extends FieldValues>({
   control,
   defaultValue,
   disabled,
+  containerStyle,
   ...textInputProps
 }: FormTextInputProps<T>) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -49,7 +50,11 @@ const FormTextInput = <T extends FieldValues>({
         };
 
         return (
-          <InputsContainer error={isError} label={label} name={name}>
+          <InputsContainer
+            error={isError}
+            label={label}
+            name={name}
+            containerStyle={containerStyle}>
             <AppTextInput
               value={value}
               name={name}

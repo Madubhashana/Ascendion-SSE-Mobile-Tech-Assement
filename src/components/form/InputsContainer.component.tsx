@@ -1,12 +1,13 @@
 import React, {ReactElement} from 'react';
 import AppText, {TextTypes} from '../elements/AppText.component';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ViewStyle} from 'react-native';
 
 type InputsContainerPropsType = {
   label?: string;
   error?: string;
   children: ReactElement | ReactElement[];
   name?: string;
+  containerStyle?: ViewStyle;
 };
 
 const InputsContainer = ({
@@ -14,6 +15,7 @@ const InputsContainer = ({
   children,
   error,
   name,
+  containerStyle,
 }: InputsContainerPropsType) => {
   const isError = !!error;
 
@@ -25,8 +27,10 @@ const InputsContainer = ({
     </AppText>
   ) : null;
 
+  const style = StyleSheet.flatten([styles.container, containerStyle]);
+
   return (
-    <View style={styles.container}>
+    <View style={style}>
       {labelText}
       {children}
       {inputErrors}
