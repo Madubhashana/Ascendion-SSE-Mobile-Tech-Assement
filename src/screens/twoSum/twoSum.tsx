@@ -7,7 +7,7 @@ import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {TwoSumFormSchema, TwoSumFormSchemaType} from './twosum-form.schema';
 import FormTextInput from '../../components/form/FormTextInput';
-import {StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 import {colors} from '../../shared/config/colors';
 
 const TwoSumScreen = () => {
@@ -55,7 +55,7 @@ const TwoSumScreen = () => {
   const isDisabled = !numberArray.length;
 
   return (
-    <ScreenContainer>
+    <ScreenContainer containerStyle={styles.screenContainer}>
       <AppText type={TextTypes.Title}>Two Sum II</AppText>
 
       <View style={styles.addNumbersContainer}>
@@ -114,6 +114,15 @@ const TwoSumScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  screenContainer: {
+    ...Platform.select({
+      web: {
+        maxWidth: 500,
+        margin: 'auto',
+        width: '100%',
+      },
+    }),
+  },
   addNumbersContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

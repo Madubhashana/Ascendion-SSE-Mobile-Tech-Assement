@@ -43,6 +43,8 @@ And uses the `react-native: ^0.79.2`.
 
 ### Validate the questions
 
-Please update the value of `question` () in `src/App.tsx` file to populate the corresponding answer. The acceptable values are `'question1' | 'question2' | 'question3'`
+- Please update the value of `question` () in `src/App.tsx` file to populate the corresponding answer. The acceptable values are `'question1' | 'question2' | 'question3'`
 
-Run `yarn test` to execute the unit tests. It has configured a Github Action CI/CD for unit tests as well.
+- The web app uses <Link> from `react-router-dom`, which will be compiled to <a> in the browser.
+
+- Run `yarn test` to execute the unit tests. It has configured a Github Action CI/CD for unit tests as well.
