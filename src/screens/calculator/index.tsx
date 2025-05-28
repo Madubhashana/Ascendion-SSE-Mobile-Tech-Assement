@@ -1,1 +1,1 @@
-export {default as CalculatorScreen} from './calculator.screen';
+export {default as CalculatorScreen} from './calculator';

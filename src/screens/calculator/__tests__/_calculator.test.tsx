@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, fireEvent, waitFor, act} from '@testing-library/react-native';
-import CalculatorScreen from '../calculator.screen';
+import CalculatorScreen from '../calculator';
 
 describe('CalculatorScreen', () => {
   it('shows required validation errors when inputs are empty', async () => {
